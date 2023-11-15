@@ -35,10 +35,6 @@ footer {
     font-size: 16px;
 }
 
-.search-input:focus {
-    background-color: #dde0ab;
-}
-
 .search-submit {
     background-color: #dde0ab;
     border: none;
