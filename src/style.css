@@ -26,14 +26,15 @@ footer {
 }
 
 .search-input:focus {
-    background-color: #555;
+    background-color: #dde0ab;
 }
 
 
 .search-submit {
     background-color: #dde0ab;
     border: none;
-    padding: 20px;
+    font-size: 15px;
+    padding: 18px;
     border-radius: 7px;
     color: white;
     float: right;
