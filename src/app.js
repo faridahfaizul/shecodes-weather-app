@@ -55,3 +55,5 @@ function currentDate(date){
     }
     return `${day} ${hours}:${minutes}`;
 }
+
+searchCity("kl")
