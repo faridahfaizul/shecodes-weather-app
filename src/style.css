@@ -1,7 +1,16 @@
 body {
     background: #dde0ab;
     font-family: 'Oswald', sans-serif;
-    margin: 0;
+    margin: 8px;
+}
+
+header {
+    padding: 0 0 30px 0;
+}
+
+form {
+    display: block;
+    margin: 0 auto;
 }
 
 footer {
@@ -20,24 +29,24 @@ footer {
 .search-input {
     background: #F9F7FE;
     border: none;
-    padding: 20px;
+    padding: 15px 20px;
     border-radius: 7px;
-    width: 78%;
+    width: 73%;
+    font-size: 16px;
 }
 
 .search-input:focus {
     background-color: #dde0ab;
 }
 
-
 .search-submit {
     background-color: #dde0ab;
     border: none;
     font-size: 15px;
-    padding: 18px;
     border-radius: 7px;
     color: white;
-    float: right;
+    margin-left: 5px;
+    padding: 15px 30px;
 }
 
 .current-city {
@@ -48,7 +57,7 @@ footer {
     font-size: 30px;
     font-weight: 300;
     margin: 0;
-    padding: 20px 0 0 0;
+    padding: 0;
 }
 
 .search-city {
