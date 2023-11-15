@@ -15,6 +15,10 @@ function searchCity(city){
         city = response.data.city;
         let cityElement = document.querySelector("#search-city");
         cityElement.innerHTML = city;
+        let iconElement = document.querySelector("#icon");
+        let iconSrc = response.data.condition.icon_url;
+        icon =`<image class="search-icon" src="${iconSrc}"/>`
+        iconElement.innerHTML = icon;
         let temperatureElement = document.querySelector("#search-temperature");
         let temperature = Math.round(response.data.temperature.current);
         temperatureElement.innerHTML = temperature;

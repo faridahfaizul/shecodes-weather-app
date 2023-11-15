@@ -50,10 +50,8 @@ footer {
 }
 
 .search-icon {
-    font-size: 30px;
-    font-weight: 300;
-    margin: 0;
-    padding: 0;
+    width: 70px;
+    height: 70px;
 }
 
 .search-city {
