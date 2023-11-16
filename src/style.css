@@ -93,7 +93,7 @@ footer {
     font-weight: bold;
 }
 
-.row {
+.weather-forecast {
     display: flex;
     justify-content: space-evenly;
 }

@@ -55,4 +55,27 @@ function currentDate(date){
     return `${day} ${hours}:${minutes}`;
 }
 
-searchCity("kl")
+function displayForecast(){
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+    let forecastHtml = "";
+    
+    days.forEach(function(day) {
+    forecastHtml = forecastHtml + `
+    <div class="col-2">
+        <div class="forecast-date">${day}</div>
+        <div>
+            <image
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-night.png"
+            class="forecast-icon"
+            ></image>
+        </div>
+        <div class="forecast-temperature">30°C</div>
+    </div>`;
+    })
+    
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = forecastHtml;
+}
+
+searchCity("kl");
+displayForecast();
