@@ -34,6 +34,7 @@ function searchCity(city){
         let windElement = document.querySelector("#search-wind");
         let wind = response.data.wind.speed;
         windElement.innerHTML = wind;
+        getForecast(city);
     });
 }
 
@@ -55,7 +56,9 @@ function currentDate(date){
     return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast(){
+function displayForecast(response){
+    console.log(response.data);
+
     let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
     let forecastHtml = "";
     
@@ -72,10 +75,16 @@ function displayForecast(){
         <div class="forecast-temperature">30°C</div>
     </div>`;
     })
-    
+
     let forecastElement = document.querySelector("#forecast");
     forecastElement.innerHTML = forecastHtml;
 }
 
+function getForecast(city){
+    let apiKey = "04dtb32bf653942046oabf5b636577a0";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+    
+    axios(apiUrl).then(displayForecast);
+}
+
 searchCity("kl");
-displayForecast();
