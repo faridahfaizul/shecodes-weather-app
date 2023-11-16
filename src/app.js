@@ -34,7 +34,6 @@ function searchCity(city){
         let windElement = document.querySelector("#search-wind");
         let wind = response.data.wind.speed;
         windElement.innerHTML = wind;
-
     });
 }
 
