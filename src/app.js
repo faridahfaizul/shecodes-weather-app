@@ -56,24 +56,34 @@ function currentDate(date){
     return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+    let date = new Date (timestamp * 1000);
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    return days[date.getDay()];
+}
+
 function displayForecast(response){
     console.log(response.data);
 
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
     let forecastHtml = "";
     
-    days.forEach(function(day) {
-    forecastHtml = forecastHtml + `
-    <div class="col-2">
-        <div class="forecast-date">${day}</div>
-        <div>
-            <image
-            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-night.png"
-            class="forecast-icon"
-            ></image>
-        </div>
-        <div class="forecast-temperature">30°C</div>
-    </div>`;
+    response.data.daily.forEach(function(day, index) {
+        if (index < 5) {
+            forecastHtml = forecastHtml + `
+            <div class="col-2">
+                <div class="forecast-date">${formatDay(day.time)}</div>
+                <div>
+                    <image
+                    src="${day.condition.icon_url}"
+                    class="forecast-icon"
+                    ></image>
+                </div>
+                <div class="forecast-temp">
+                    <div class="forecast-temperature">${Math.round(day.temperature.day)}</div>
+                    <div class="forecast-temperature-unit">°C</div>
+                </div>
+            </div>`;
+        }
     })
 
     let forecastElement = document.querySelector("#forecast");
